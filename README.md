@@ -1,4 +1,4 @@
-# Responsive Landing Page Headphones
+# Abdul Salam Yunus Landing Page
 
 - Mobile first (adaptation layout)
 - CSS variables
