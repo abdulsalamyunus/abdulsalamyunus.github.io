@@ -1,352 +1,732 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-        <meta name="theme-color" content="#3E3832">
-        <meta name="msapplication-navbutton-color" content="#3E3832">
-        <meta name="apple-mobile-web-app-status-bar-style" content="#3E3832">
-    
-        <!--=============== OPEN GRAPH ===============-->
-        <meta property="og:type" content="Layout Headphones page" />
-        <meta
-            property="og:url"
-            content="https://abdulsalamyunus.github.io/"
-        />
-        <meta property="og:title" content="Headphones Layout" />
-        <meta
-            property="og:description"
-            content="Hey, this is layout from github page. You can visit the page by clicking on this link"
-        />
-        <meta property="og:image" content="assets/img/product2.png" />
 
-        <!--=============== FAVICON ===============-->
-        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+<html class="dark" data-theme="dark" lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Abdul Salam Yunus (Andu) - Portfolio &amp; Interactive CV</title><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+  :root {
+    --bg: #0b1326;
+    --card: #171f33;
+    --card2: #131b2e;
+    --card-hover: #222a3d;
+    --txt: #dae2fd;
+    --mut: #918fa1;
+    --ln: #2d3449;
+    --pri: #4f46e5;
+    --pri-txt: #ffffff;
+    --sec: #4cd7f6;
+    --accent: #34d399;
+    --amber: #ffb95f;
+    --header-bg: rgba(11, 19, 38, 0.85);
+    --input-bg: #060e20;
+    --sh: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
 
-        <!--=============== REMIX ICONS ===============-->
-        <link href="//cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  html.light,
+  [data-theme="light"],
+  body.light {
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --card2: #f1f5f9;
+    --card-hover: #e2e8f0;
+    --txt: #0f172a;
+    --mut: #475569;
+    --ln: #cbd5e1;
+    --pri: #4338ca;
+    --pri-txt: #ffffff;
+    --sec: #0284c7;
+    --accent: #059669;
+    --amber: #d97706;
+    --header-bg: rgba(248, 250, 252, 0.88);
+    --input-bg: #ffffff;
+    --sh: 0 10px 25px rgba(0, 0, 0, 0.08);
+  }
 
-        <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="assets/css/styles.css">
+  @layer base {
+    html, body {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      background-color: var(--bg);
+      color: var(--txt);
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+    body {
+      overscroll-behavior: none;
+    }
+    main > :first-child {
+      margin-top: 0 !important;
+    }
+    main > :last-child {
+      margin-bottom: 0 !important;
+    }
+  }
 
-        <title>Abdul Salam Yunus</title>
-    </head>
-    <body>
-        <!--=============== HEADER ===============-->
-        <header class="header" id="header">
-            <nav class="nav container">
-                <a href="#" class="nav__logo">
-                    <img src="assets/img/logo.png" alt="">
-                </a>
-        
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="#home" class="nav__link active-link">Home</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#specs" class="nav__link">Skills</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#case" class="nav__link">Excellence</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#products" class="nav__link">T-mates</a>
-                        </li>
-                    </ul>
-            
-                    <div class="nav__close" id="nav-close">
-                        <i class="ri-close-line"></i>
-                    </div>
-                </div>
-        
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="ri-function-line"></i>
-                </div>
-            </nav>
-        </header>
+  /* Universal theme support overrides */
+  html.light .theme-bg,
+  [data-theme="light"] .theme-bg { background-color: var(--bg) !important; }
+  
+  html.light .theme-card,
+  [data-theme="light"] .theme-card { 
+    background-color: var(--card) !important; 
+    border-color: var(--ln) !important;
+    box-shadow: var(--sh) !important;
+  }
+  
+  html.light .theme-card-sub,
+  [data-theme="light"] .theme-card-sub { 
+    background-color: var(--card2) !important; 
+    border-color: var(--ln) !important;
+  }
+  
+  html.light .theme-text-main,
+  [data-theme="light"] .theme-text-main { color: var(--txt) !important; }
+  
+  html.light .theme-text-muted,
+  [data-theme="light"] .theme-text-muted { color: var(--mut) !important; }
+  
+  html.light .theme-border,
+  [data-theme="light"] .theme-border { border-color: var(--ln) !important; }
 
-        <main class="main">
-            <!--=============== HOME ===============-->
-            <section class="home section" id="home">
-                <div class="home__container container grid">
-                    <div>
-                        <img src="assets/img/home.png" alt="" class="home__img">
-                    </div>
-            
-                    <div class="home__data">
-                        <div class="home__header">
-                            <h1 class="home__title">Yunus</h1>
-                            <h2 class="home__subtitle">Abdul Salam</h2>
-                        </div>
-                
-                        <div class="home__footer">
-                            <h3 class="home__title-description">Overview</h3>
-                            <p class="home__description">Abdul Salam Yunus is an Operational Service Officer at the Secretariat of Jatisampurna Subdistrict, Bekasi City, responsible for supporting administrative services, coordination, and smooth government operations.
-                            </p>
-                            <a href="https://shopee.co.id/list/Ukuran%20Sepatu/44" class="button button--flex">
-                                <span class="button--flex">
-                                    <i class="ri-shopping-bag-line button__icon"></i></i> Shoe size
-                                </span>
-                                <span class="home__price">44</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!--=============== SPONSOR ===============-->
-            <section class="sponsor section">
-                <div class="sponsor__container container grid">
-                    <a href="https://app.u.shopeepay.co.id/u/vGXomHLzzUnJpeMHDzM9S"><img src="assets/img/sponsor1.png" alt="" class="sponsor__img"></a>
-                    <a href="https://link.dana.id/minta?full_url=https://qr.dana.id/v1/281012012020061353061592"><img src="assets/img/sponsor2.png" alt="" class="sponsor__img"></a>
-                    <a href="https://www.instagram.com/kecjatisampurna/"><img src="assets/img/sponsor3.png" alt="" class="sponsor__img"></a>
-                    <a href="https://www.youtube.com/@AbdulSalamYunus"><img src="assets/img/sponsor4.png" alt="" class="sponsor__img"></a>
-                </div>
-            </section>
-    
-            <!--=============== SPECS ===============-->
-            <section class="specs section grid" id="specs">
-                <h2 class="section__title section__title-gradient">Skills</h2>
-        
-                <div class="specs__container container grid">
-                    <div class="specs__content grid">
-                        <div class="specs__data">
-                            <i class="ri-bluetooth-line specs__icon"></i>
-                            <h3 class="specs__title">Attacker</h3>
-                            <span class="specs__subtitle">88%</span>
-                        </div>
-                
-                        <div class="specs__data">
-                            <i class="ri-battery-charge-line specs__icon"></i>
-                            <h3 class="specs__title">Midfielder</h3>
-                            <span class="specs__subtitle">76%</span>
-                        </div>
-                
-                        <div class="specs__data">
-                            <i class="ri-plug-line specs__icon"></i>
-                            <h3 class="specs__title">Defender</h3>
-                            <span class="specs__subtitle">42%</span>
-                        </div>
-                
-                        <div class="specs__data">
-                            <i class="ri-mic-line specs__icon"></i>
-                            <h3 class="specs__title">Goalkeeper</h3>
-                            <span class="specs__subtitle">10% <br> (Not Capable)</span>
-                        </div>
-                    </div>
-            
-                    <div>
-                        <img src="assets/img/specs.png" alt="" class="specs__img">
-                    </div>
-                </div>
-            </section>
-    
-            <!--=============== CASE ===============-->
-            <section class="case section grid" id="case">
-                <h2 class="section__title section__title-gradient">Excellence</h2>
-        
-                <div class="case__container container grid">
-                    <div>
-                        <img src="assets/img/case.png" alt="" class="case__img">
-                    </div>
-            
-                    <div class="case__data">
-                        <p class="case__description">Abdul Salam Yunus is known as a disciplined, responsive, and highly dedicated civil servant. He is committed to delivering transparent and professional public services, always prioritizing the community’s interests in carrying out his duties.
-                        </p>
-                        <a href="https://jim.unindra.ac.id/index.php/JRKT/search/authors/view?firstName=Abdul&middleName=Salam&lastName=Yunus&affiliation=Universitas%20Indraprasta%20PGRI&country=ID" class="button button--flex">
-                            <i class="ri-information-line button__icon"></i> More info
-                        </a>
-                    </div>
-                </div>
-            </section>
+  html.light header {
+    background-color: var(--header-bg) !important;
+    border-bottom-color: var(--ln) !important;
+  }
 
-            <!--=============== DISCOUNT ===============-->
-            <section class="discount section">
-                <div class="discount__container container grid">
-                    <div class="discount__animate">
-                        <h2 class="discount__title">Immerse yourself in <br> your creativity</h2>
-                        <p class="discount__description">Get it now, up to 50% off.</p>
-                        <a href="https://www.google.com/search?q=apa+abdul+salam+yunus+CEO+el-salam+technology,+inc&sca_esv=72c81ee87f92bcb2&prmd=ivns&sxsrf=AE3TifNMfJ1FS0OeirVYN0MGKDMUuHHACg:1759297510507&source=lnms&fbs=AIIjpHxU7SXXniUZfeShr2fp4giZ1Y6MJ25_tmWITc7uy4KIeqDdErwP5rACeJAty2zADJjYuUnSkczEhozYdaq1wZrEheAY38UjnRKVLYFDREDmz4LtUa2NI1pXsToNtK25nqxewfCmKf9t2e5pS9Sb7-D_wPSGzGth0zhH0Kdg7saWPPCLwBeC2KdrGEuqRbUOaVchUziGjsLozNFBsnrpaVphqYkK1g&sa=X&ved=2ahUKEwib6qv5pYKQAxWicWwGHWaJD4cQ0pQJegQIBhAF&biw=1745&bih=828&dpr=1.1" class="button button--flex">
-                            <i class="ri-shopping-bag-line button__icon"></i> Check It Now
-                        </a>
-                    </div>
-            
-                    <img src="assets/img/discount.png" alt="" class="discount__img">
-                </div>
-            </section>
+  html.light footer {
+    background-color: #f1f5f9 !important;
+    border-top-color: var(--ln) !important;
+  }
 
-            <!--=============== PRODUCTS ===============-->
-            <section class="products section" id="products">
-                <h2 class="section__title section__title-gradient products__line">
-                    Choose <br> Your T-mates
-                </h2>
-        
-                <div class="products__container container grid">
-                    <article class="products__card">
-                        <div class="products__content">
-                            <a href="https://abdulsalamyunus.github.io/tmatesplanning">
-							<img src="assets/img/product1.png" alt="" class="products__img">
-                    
-                            <h3 class="products__title">Planning</h3>
-                            <span class="products__price">Bowo, Yuni</span>
-                    
-                            <button class="button button--flex products__button">
-                                <i class="ri-shopping-bag-line button__icon"></i>
-                            </button>
-							</a>
-                        </div>
-                    </article>
-                    <article class="products__card">
-                        <div class="products__content">
-                            <a href="https://abdulsalamyunus.github.io/tmateshr">
-							<img src="assets/img/product2.png" alt="" class="products__img">
-                    
-                            <h3 class="products__title">HR</h3>
-                            <span class="products__price">Mala, Lilik</span>
-                    
-                            <button class="button button--flex products__button">
-                                <i class="ri-shopping-bag-line button__icon"></i>
-                            </button>
-							</a>
-                        </div>
-                    </article>
-                    <article class="products__card">
-                        <div class="products__content">
-                            <a href="https://abdulsalamyunus.github.io/tmatesinventory">
-							<img src="assets/img/product3.png" alt="" class="products__img">
-                    
-                            <h3 class="products__title">Inventory</h3>
-                            <span class="products__price">Dian, Agus</span>
-                    
-                            <button class="button button--flex products__button">
-                                <i class="ri-shopping-bag-line button__icon"></i>
-                            </button>
-							</a>
-                        </div>
-                    </article>
-                    <article class="products__card">
-                        <div class="products__content">
-                            <a href="https://abdulsalamyunus.github.io/tmatesarchive">
-							<img src="assets/img/product4.png" alt="" class="products__img">
-                    
-                            <h3 class="products__title">Archive</h3>
-                            <span class="products__price">Ida, Ambang</span>
-                    
-                            <button class="button button--flex products__button">
-                                <i class="ri-shopping-bag-line button__icon"></i>
-                            </button>
-							</a>
-                        </div>
-                    </article>
-            
-                    <article class="products__card">
-                        <div class="products__content">
-                            <a href="https://abdulsalamyunus.github.io/tmatespio">
-							<img src="assets/img/product5.png" alt="" class="products__img">
-                    
-                            <h3 class="products__title">PIO</h3>
-                            <span class="products__price">Nopi, Zaen</span>
-                    
-                            <button class="button button--flex products__button">
-                                <i class="ri-shopping-bag-line button__icon"></i>
-                            </button>
-							</a>
-                        </div>
-                    </article>
-                </div>
-            </section>
-        </main>
+  /* Adapt blobs in light mode */
+  html.light .hero-blob-1 { opacity: 0.15 !important; background-color: #6366f1 !important; }
+  html.light .hero-blob-2 { opacity: 0.12 !important; background-color: #0284c7 !important; }
+  html.light .hero-blob-3 { opacity: 0.12 !important; background-color: #f59e0b !important; }
 
-        <!--=============== FOOTER ===============-->
-        <footer class="footer section">
-            <div class="footer__container container grid">
-                <a href="#" class="footer__logo">
-                    <img src="assets/img/logo.png" alt="">
-                </a>
-        
-                <div class="footer__content">
-                    <h3 class="footer__title">Collaborations</h3>
-            
-                    <ul class="footer__links">
-                        <li>
-                            <a href="https://siacep.github.io/" class="footer__link">Siacep</a>
-                        </li>
-                        <li>
-                            <a href="https://sitemantini.github.io/" class="footer__link">Sitemantini</a>
-                        </li>
-                        <li>
-                            <a href="https://sidinda.github.io/" class="footer__link">Sidinda PBB</a>
-                        </li>
-                        <li>
-                            <a href="https://simakerly.github.io/" class="footer__link">Simakerly</a>
-                        </li>
-						<li>
-                            <a href="https://simpelanpomel.github.io/" class="footer__link">Simpelan KB</a>
-                        </li>
-                    </ul>
-                </div>
-        
-                <div class="footer__content">
-                    <h3 class="footer__title">Supports</h3>
-            
-                    <ul class="footer__links">
-                        <li>
-                            <a href="https://www.fifa.gg/efootball/player/abdulsalamyunus" class="footer__link">FIFA-e</a>
-                        </li>
-                        <li>
-                            <a href="https://abdulsalamyunus.github.io/LuthfiRahma" class="footer__link">Wedding Invitation</a>
-                        </li>
-                        <li>
-                            <a href="https://abdulsalamyunus.github.io/WCDIKCJSPCamera/" class="footer__link">WCD Camera</a>
-                        </li>
-                        <li>
-                            <a href="https://abdulsalamyunus.github.io/ssctkk/" class="footer__link">SSCTKK</a>
-                        </li>
-						<li>
-                            <a href="https://abdulsalamyunus.github.io/pdash/" class="footer__link">P-Dash</a>
-                        </li>
-                    </ul>
-                </div>
-        
-                <div class="footer__content">
-                    <form action="" class="footer__form">
-                        <input type="email" placeholder="Email" class="footer__input">
-                        <button class="button button--flex">
-                            <i class="ri-send-plane-line button__icon"></i> Subscribe
-                        </button>
-                    </form>
-            
-                    <div class="footer__social">
-                        <a href="https://www.facebook.com/andhu.vtmg" target="_blank" class="footer__social-link">
-                            <i class="ri-facebook-fill"></i>
-                        </a>
-                        <a href="https://www.instagram.com/abdulsalamyunus" target="_blank" class="footer__social-link">
-                            <i class="ri-instagram-line"></i>
-                        </a>
-                        <a href="https://x.com/AndhuNezia" target="_blank" class="footer__social-link">
-                            <i class="ri-twitter-line"></i>
-                        </a>
-                    </div>
-                </div>
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    body {
+      background: #fff !important;
+      color: #000 !important;
+    }
+  }
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-tint":"#c3c0ff","outline":"#918fa1","surface-container-low":"var(--card2)","on-tertiary-container":"#ffd4a4","on-tertiary-fixed-variant":"#653e00","surface-container-highest":"var(--card-hover)","surface-bright":"#31394d","on-secondary-fixed-variant":"#004e5c","tertiary-fixed-dim":"#ffb95f","background":"var(--bg)","accent-emerald":"#10b981","surface-container-lowest":"var(--input-bg)","on-primary":"#ffffff","on-surface":"var(--txt)","on-tertiary-fixed":"#2a1700","on-error":"#690005","on-error-container":"#ffdad6","primary":"#6366f1","on-primary-fixed":"#0f0069","on-background":"var(--txt)","secondary":"#0ea5e9","surface-light-clean":"#F8FAFC","on-surface-variant":"var(--mut)","error":"#ef4444","surface":"var(--bg)","inverse-surface":"var(--txt)","on-primary-container":"#ffffff","primary-container":"var(--pri)","primary-fixed":"#e2dfff","outline-variant":"var(--ln)","surface-container-high":"var(--card-hover)","on-primary-fixed-variant":"#3323cc","tertiary":"var(--amber)","on-secondary":"#003640","on-secondary-container":"#00424e","surface-container":"var(--card)","electric-blue":"#2563EB","surface-dark-deep":"#0B0F19","secondary-fixed-dim":"#4cd7f6","on-secondary-fixed":"#001f26","tertiary-container":"#885500","inverse-primary":"#4338ca","surface-variant":"var(--card-hover)","error-container":"#93000a","surface-dim":"var(--bg)","secondary-container":"#0284c7","primary-fixed-dim":"#c3c0ff","on-tertiary":"#472a00","secondary-fixed":"#acedff","inverse-on-surface":"#283044","tertiary-fixed":"#ffddb8"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"1rem","space-lg":"1.5rem","space-xs":"0.25rem","space-xl":"2.5rem","margin":"3rem","margin-mobile":"1.25rem","gutter":"1.5rem","space-sm":"0.5rem","gutter-mobile":"1rem"},"fontFamily":{"label-code-lg":["JetBrains Mono"],"body-sm":["Plus Jakarta Sans"],"display-hero-mobile":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"label-code-sm":["JetBrains Mono"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-badge":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"]}}}};</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen selection:bg-primary selection:text-white antialiased transition-colors duration-200"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl border-b border-outline-variant/40 no-print transition-colors duration-200"><div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-space-md"><a class="flex items-center gap-space-sm group" href="#"><img alt="Andu Tech Logo" class="h-8 w-auto object-contain transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1WIPay2IVNN_ZJ5GCbmVt-ZvIO2Gncn_xVUKx1Zu3CpulhjgdMu1I8CtkF7Critlzs6KD3ovKcK-jzRbUeBQTdO1JkW_MINadGTHLvva69YvGtvjcmSM6ZymYJF2pFBi3L8dfchCi0UBF6T7jqIpAKXVL4hab5XAttb8gQXoVAkF8fY5QcH7RQzJHJ89VkZIBq3dMUXfUEA9aCIx9319kDilINrgwytc_mjZVWMkS5RkeBlyMTh3Jz6baY"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-none tracking-tight">Andu</span><span class="font-label-code-sm text-label-code-sm text-on-surface-variant leading-none">El-Salam Tech</span></div></a><nav class="hidden xl:flex items-center gap-space-xs p-1"><a class="px-3 py-1.5 transition-colors bg-primary-container text-white font-headline-sm text-body-sm rounded-lg" data-nav="overview" href="#hero-section"><span data-i18n="nav_overview">Beranda</span></a><a class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-nav="apps" href="#playstore-section"><span data-i18n="nav_apps">18 Aplikasi Android</span></a><a class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-nav="innovations" href="#innovation-section"><span data-i18n="nav_innovations">Inovasi Daerah</span></a><a class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-nav="speaker" href="#speaker-section"><span data-i18n="nav_speaker">Pemateri</span></a><a class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-nav="cv" href="#cv-section"><span data-i18n="nav_cv">CV &amp; Vault</span></a><a class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-nav="contact" href="#contact-section"><span data-i18n="nav_contact">Kontak</span></a></nav><div class="flex items-center gap-space-sm"><div class="flex items-center bg-surface-container-low rounded-lg p-0.5 border border-outline-variant/60"><button class="px-2.5 py-1 rounded font-label-code-sm text-label-code-sm transition-all text-on-surface-variant hover:text-on-surface" id="btn-lang-en" onclick="setLanguage('EN')" type="button">EN</button><button class="px-2.5 py-1 rounded font-label-code-sm text-label-code-sm transition-all bg-surface-container-high text-on-surface shadow-sm font-semibold" id="btn-lang-id" onclick="setLanguage('ID')" type="button">ID</button></div><button aria-label="Toggle theme mode" class="w-9 h-9 rounded-lg flex items-center justify-center bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors border border-outline-variant/60 cursor-pointer shadow-sm" id="theme-toggle" onclick="toggleTheme()" title="Ganti Tema (Light/Dark)" type="button"><span class="material-symbols-outlined text-[20px]" id="theme-icon">dark_mode</span></button><button class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-secondary text-label-code-sm transition-colors border border-outline-variant" onclick="window.print()" title="Cetak CV"><span class="material-symbols-outlined text-[16px]">print</span><span data-i18n="btn_print">Print CV</span></button><img alt="Abdul Salam Yunus" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/40" src="https://media.licdn.com/dms/image/v2/C5103AQGfnFqSkmjFvg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516972981811?e=2147483647&v=beta&t=EIhpuRiIaOFOLXokVytw2CJczehRUoUwZaNaLM4wyMU"/></div></div></header><main class="w-full pt-16 bg-surface min-h-screen transition-colors duration-200"><div class="flex flex-col w-full relative overflow-hidden"><div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[720px] h-[720px] bg-primary-container/20 rounded-full blur-[140px] -z-10 animate-pulse hero-blob-1"></div><div class="pointer-events-none absolute top-[900px] -left-32 w-[520px] h-[520px] bg-secondary-container/15 rounded-full blur-[130px] -z-10 hero-blob-2"></div><div class="pointer-events-none absolute top-[2100px] -right-32 w-[600px] h-[600px] bg-tertiary-container/20 rounded-full blur-[140px] -z-10 hero-blob-3"></div><div class="fixed top-20 right-6 z-50 flex flex-col gap-3 pointer-events-none no-print" id="toast-container"></div><!-- HERO SECTION --><section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-12 md:py-16" id="hero-section"><div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16"><div class="flex-1 flex flex-col items-start gap-6"><div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high/80 backdrop-blur-md shadow-sm border border-secondary/20"><span class="w-2.5 h-2.5 rounded-full bg-accent-emerald animate-ping"></span><span class="font-label-code-sm text-label-code-sm text-secondary font-semibold" data-i18n="hero_pill">Terbuka untuk undangan pemateri &amp; kolaborasi</span></div><div class="flex flex-col gap-2"><h1 class="font-display-hero text-headline-lg md:text-display-hero text-on-surface tracking-tight font-extrabold leading-tight"><span data-i18n="hero_salute">Halo, saya</span><br/><span class="bg-gradient-to-r from-on-surface via-primary to-secondary bg-clip-text text-transparent">Abdul Salam Yunus</span></h1><div class="flex flex-wrap items-center gap-3"><span class="font-headline-md text-headline-md text-tertiary font-bold tracking-normal" data-i18n="hero_callme">Panggil saja Andu 👋</span><span class="px-2.5 py-0.5 rounded-md bg-surface-container-highest text-secondary font-label-code-sm text-label-code-sm font-semibold border border-outline-variant/30">andu.my.id</span></div><!-- Dynamic Role Typing Indicator --><div class="h-8 flex items-center gap-2 mt-1"><span class="font-label-code-lg text-label-code-lg text-primary font-bold" id="role-typewriter">Pengembang Aplikasi Android</span><span class="w-2 h-5 bg-secondary inline-block animate-pulse"></span></div></div><p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed" data-i18n="hero_summary">Founder El-Salam Technology, Inc. Saya membuat aplikasi Android, memimpin inovasi digital di pemerintahan daerah, dan berbagi soal AI serta kepemimpinan.</p><!-- Chips & Badges Hub --><div class="flex flex-wrap items-center gap-2 max-w-2xl"><span class="px-3 py-1 rounded-lg bg-surface-container-high text-on-surface font-label-code-sm text-label-code-sm border border-outline-variant flex items-center gap-1.5 shadow-sm">📍 Bekasi</span><span class="px-3 py-1 rounded-lg bg-surface-container-high text-on-surface font-label-code-sm text-label-code-sm border border-outline-variant flex items-center gap-1.5 shadow-sm">🎓 S.Kom. (Sarjana Komputer)</span><span class="px-3 py-1 rounded-lg bg-surface-container-high text-secondary font-label-code-sm text-label-code-sm border border-secondary/30 flex items-center gap-1.5 shadow-sm">🏛️ ASN (Aparatur Sipil Negara)</span><a class="px-3 py-1 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-accent-emerald font-label-code-sm text-label-code-sm border border-accent-emerald/30 flex items-center gap-1.5 transition-colors shadow-sm" href="https://play.google.com/store/apps/developer?id=El-Salam+Technology,+Inc." rel="noopener noreferrer" target="_blank">▶️ Google Play: El-Salam Technology, Inc.</a><a class="px-3 py-1 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-code-sm text-label-code-sm border border-primary/30 flex items-center gap-1.5 transition-colors shadow-sm" href="https://andu.my.id/" rel="noopener noreferrer" target="_blank">🌐 andu.my.id</a></div><!-- Verified DOCUMENT_2 Authentic Stats --><div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full max-w-2xl py-2"><div class="p-3.5 rounded-2xl bg-surface-container/90 backdrop-blur-md border border-outline-variant/60 flex flex-col shadow-sm"><span class="text-headline-md font-bold text-secondary">18+</span><span class="font-label-code-sm text-label-code-sm text-on-surface-variant leading-tight" data-i18n="stat_apps">Aplikasi Android Play Store</span></div><div class="p-3.5 rounded-2xl bg-surface-container/90 backdrop-blur-md border border-outline-variant/60 flex flex-col shadow-sm"><span class="text-headline-md font-bold text-primary">10</span><span class="font-label-code-sm text-label-code-sm text-on-surface-variant leading-tight" data-i18n="stat_innovations">Inovasi PKA &amp; PKP Kota Bekasi</span></div><div class="p-3.5 rounded-2xl bg-surface-container/90 backdrop-blur-md border border-outline-variant/60 flex flex-col shadow-sm"><span class="text-headline-md font-bold text-accent-emerald">10 Thn</span><span class="font-label-code-sm text-label-code-sm text-on-surface-variant leading-tight" data-i18n="stat_builder">Membangun sejak 2016</span></div><div class="p-3.5 rounded-2xl bg-surface-container/90 backdrop-blur-md border border-outline-variant/60 flex flex-col shadow-sm"><span class="text-headline-md font-bold text-tertiary">1 Sesi</span><span class="font-label-code-sm text-label-code-sm text-on-surface-variant leading-tight" data-i18n="stat_speaker">Pemateri Utama LDKO 2026</span></div></div><!-- CTA Hub --><div class="flex flex-wrap items-center gap-3 pt-2 w-full sm:w-auto no-print"><a class="px-5 py-3 rounded-xl bg-primary-container text-white font-headline-sm text-body-md font-semibold hover:bg-inverse-primary shadow-xl shadow-primary-container/25 transition-all flex items-center gap-2" href="#playstore-section"><span class="material-symbols-outlined text-[20px]">shop</span><span data-i18n="cta_explore_apps">Jelajahi 18 Aplikasi</span></a><a class="px-5 py-3 rounded-xl bg-surface-container-high text-on-surface font-headline-sm text-body-md font-semibold hover:bg-surface-container-highest transition-all flex items-center gap-2 border border-outline-variant shadow-sm" href="#cv-section"><span class="material-symbols-outlined text-[20px]">description</span><span data-i18n="cta_cv_notes">CV &amp; Brankas Catatan</span></a><button class="px-4 py-3 rounded-xl bg-secondary/15 hover:bg-secondary/25 text-secondary font-headline-sm text-body-md font-semibold transition-all flex items-center gap-2 border border-secondary/30 shadow-sm" id="btn-quick-ping" type="button"><span class="material-symbols-outlined text-[20px]">notifications_active</span><span data-i18n="cta_test_notif">Tes Notifikasi</span></button></div></div><!-- Visual Card Avatar --><div class="relative w-full max-w-md flex justify-center items-center"><div class="absolute inset-0 rounded-full bg-gradient-to-tr from-primary via-secondary to-tertiary opacity-25 blur-3xl scale-105"></div><div class="relative z-10 w-72 h-72 sm:w-80 sm:h-80 rounded-3xl bg-surface-container-high/60 p-2 backdrop-blur-xl shadow-2xl border border-outline-variant"><div class="w-full h-full rounded-2xl overflow-hidden relative group"><img alt="Abdul Salam Yunus - Andu Tech" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://media.licdn.com/dms/image/v2/C5103AQGfnFqSkmjFvg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516972981811?e=2147483647&v=beta&t=EIhpuRiIaOFOLXokVytw2CJczehRUoUwZaNaLM4wyMU"/><div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div><div class="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-surface-container/90 backdrop-blur-lg flex items-center justify-between border border-outline-variant shadow-lg"><div class="flex flex-col"><span class="font-headline-sm text-body-sm font-bold text-on-surface leading-tight">Abdul Salam Yunus</span><span class="font-label-code-sm text-label-code-sm text-secondary">Founder • El-Salam Tech</span></div><div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-accent-emerald"><span class="material-symbols-outlined text-[20px]">verified</span></div></div></div></div><!-- Badge 1: Android Play Store Publisher --><div class="absolute -top-4 -right-2 sm:-right-4 z-20 p-3 rounded-2xl bg-surface-container/95 backdrop-blur-xl shadow-xl flex items-center gap-3 border border-secondary/40"><div class="w-10 h-10 rounded-xl bg-secondary/15 flex items-center justify-center text-secondary"><span class="material-symbols-outlined text-[24px]">android</span></div><div class="flex flex-col pr-1"><span class="font-label-badge text-label-badge text-on-surface uppercase tracking-wider font-bold">18 Aplikasi</span><span class="font-label-code-sm text-label-code-sm text-accent-emerald font-semibold">Google Play Active</span></div></div><!-- Badge 2: Inovator Digital ASN --><div class="absolute -bottom-6 -left-2 sm:-left-6 z-20 p-3 rounded-2xl bg-surface-container/95 backdrop-blur-xl shadow-xl flex items-center gap-3 border border-primary/40"><div class="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[22px]">policy</span></div><div class="flex flex-col pr-2"><span class="font-label-code-sm text-label-code-sm text-on-surface font-bold">ASN &amp; Inovator</span><span class="font-label-code-sm text-label-code-sm text-on-surface-variant">PKA &amp; PKP Kota Bekasi</span></div></div></div></div></section><!-- SECTION: GOOGLE PLAY APPS SHOWCASE (All 18 Genuine Apps) --><section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-16" id="playstore-section"><div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10"><div class="flex flex-col gap-2 max-w-2xl"><div class="inline-flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span><span class="font-label-code-sm text-label-code-sm text-tertiary uppercase font-bold tracking-wider" data-i18n="section_apps_tag">Portofolio Google Play Resmi</span></div><h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight" data-i18n="section_apps_title">18 Aplikasi Android El-Salam Technology, Inc.</h2><p class="font-body-md text-body-md text-on-surface-variant" data-i18n="section_apps_desc">Daftar lengkap 18 aplikasi Android yang dirancang, dibangun, dan dipublikasikan resmi di Google Play Store oleh Abdul Salam Yunus.</p></div><!-- Filters & Bookmark counter --><div class="flex flex-wrap items-center gap-2"><div class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container-low border border-outline-variant text-tertiary font-label-code-sm text-label-code-sm shadow-sm"><span class="material-symbols-outlined text-[18px]">star</span><span id="saved-bookmarks-counter">0 Tersimpan</span></div><div class="flex flex-wrap items-center gap-1 bg-surface-container-low p-1.5 rounded-xl border border-outline-variant shadow-sm" id="filter-pill-container"><button class="app-filter-btn px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-code-sm text-label-code-sm font-semibold active-filter" onclick="filterApps('all')" type="button">Semua (18)</button><button class="app-filter-btn px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-code-sm text-label-code-sm" onclick="filterApps('gov')" type="button">Kinerja &amp; Pemerintahan (6)</button><button class="app-filter-btn px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-code-sm text-label-code-sm" onclick="filterApps('money')" type="button">Keuangan &amp; Produktivitas (6)</button><button class="app-filter-btn px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-code-sm text-label-code-sm" onclick="filterApps('life')" type="button">Kesehatan &amp; Gaya Hidup (5)</button><button class="app-filter-btn px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-code-sm text-label-code-sm" onclick="filterApps('biz')" type="button">Enterprise (1)</button></div></div></div><!-- 18 Apps Grid Container --><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="apps-grid"><!-- Rendered dynamically from authentic app array --></div></section><!-- SECTION: INOVASI KEPEMIMPINAN DAERAH (PKA & PKP Kota Bekasi) --><section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-16" id="innovation-section"><div class="rounded-3xl bg-gradient-to-br from-surface-container via-surface-container-low to-surface-container backdrop-blur-xl p-8 sm:p-12 shadow-2xl border border-outline-variant/60"><div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8"><div class="flex flex-col gap-2 max-w-2xl"><div class="inline-flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-secondary"></span><span class="font-label-code-sm text-label-code-sm text-secondary uppercase font-bold tracking-wider" data-i18n="section_innov_tag">Pimpinan Tim Inovasi (PKA &amp; PKP)</span></div><h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight" data-i18n="section_innov_title">10 Proyek Inovasi Pemerintah Kota Bekasi</h2><p class="font-body-md text-body-md text-on-surface-variant" data-i18n="section_innov_desc">Rancangan dan pimpinan implementasi aksi perubahan teknologi &amp; administrasi tata kelola pemerintahan Kota Bekasi sejak 2020 hingga 2026.</p></div><span class="px-3.5 py-1.5 rounded-xl bg-secondary/15 text-secondary font-label-code-sm text-label-code-sm font-semibold border border-secondary/30">10 Aksi Perubahan Terealisasi</span></div><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4" id="innovations-grid"><!-- 10 Authentic Inovasi items --><div class="p-4 rounded-2xl bg-surface-container-lowest/90 border border-outline-variant hover:border-secondary transition-all flex flex-col justify-between shadow-sm"><div class="flex items-center justify-between mb-2"><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-primary/15 text-primary font-bold">2026</span><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-secondary/15 text-secondary">IT</span></div><h4 class="font-headline-sm text-body-lg font-bold text-on-surface">Siplokal</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Sistem informasi pelayanan lokal pemerintahan berbasis digital.</p></div><div class="p-4 rounded-2xl bg-surface-container-lowest/90 border border-outline-variant hover:border-secondary transition-all flex flex-col justify-between shadow-sm"><div class="flex items-center justify-between mb-2"><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-primary/15 text-primary font-bold">2026</span><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-accent-emerald/15 text-accent-emerald">Admin</span></div><h4 class="font-headline-sm text-body-lg font-bold text-on-surface">Sipermas</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Tata kelola administrasi pelayanan kemasyarakatan terpadu.</p></div><div class="p-4 rounded-2xl bg-surface-container-lowest/90 border border-outline-variant hover:border-secondary transition-all flex flex-col justify-between shadow-sm"><div class="flex items-center justify-between mb-2"><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-primary/15 text-primary font-bold">2025</span><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-accent-emerald/15 text-accent-emerald">Admin</span></div><h4 class="font-headline-sm text-body-lg font-bold text-on-surface">Koper Uang</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Pengelolaan keuangan dan administrasi kas internal efisien.</p></div><div class="p-4 rounded-2xl bg-surface-container-lowest/90 border border-outline-variant hover:border-secondary transition-all flex flex-col justify-between shadow-sm"><div class="flex items-center justify-between mb-2"><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-primary/15 text-primary font-bold">2024</span><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-secondary/15 text-secondary">IT</span></div><h4 class="font-headline-sm text-body-lg font-bold text-on-surface">Simakerly</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Digitalisasi tracking kinerja &amp; laporan kepegawaian modern.</p></div><div class="p-4 rounded-2xl bg-surface-container-lowest/90 border border-outline-variant hover:border-secondary transition-all flex flex-col justify-between shadow-sm"><div class="flex items-center justify-between mb-2"><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-primary/15 text-primary font-bold">2023</span><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-secondary/15 text-secondary">IT</span></div><h4 class="font-headline-sm text-body-lg font-bold text-on-surface">Sitemantini</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Monitoring dan integrasi data pemeliharaan sistem.</p></div><div class="p-4 rounded-2xl bg-surface-container-lowest/90 border border-outline-variant hover:border-secondary transition-all flex flex-col justify-between shadow-sm"><div class="flex items-center justify-between mb-2"><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-primary/15 text-primary font-bold">2023</span><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-secondary/15 text-secondary">IT</span></div><h4 class="font-headline-sm text-body-lg font-bold text-on-surface">Sidinda PBB</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Platform integrasi dan monitoring data pendapatan daerah PBB.</p></div><div class="p-4 rounded-2xl bg-surface-container-lowest/90 border border-outline-variant hover:border-secondary transition-all flex flex-col justify-between shadow-sm"><div class="flex items-center justify-between mb-2"><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-primary/15 text-primary font-bold">2022</span><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-secondary/15 text-secondary">IT</span></div><h4 class="font-headline-sm text-body-lg font-bold text-on-surface">Simpelan KB</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Sistem informasi pelayanan kepegawaian &amp; data keluarga berencana.</p></div><div class="p-4 rounded-2xl bg-surface-container-lowest/90 border border-outline-variant hover:border-secondary transition-all flex flex-col justify-between shadow-sm"><div class="flex items-center justify-between mb-2"><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-primary/15 text-primary font-bold">2021</span><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-secondary/15 text-secondary">IT</span></div><h4 class="font-headline-sm text-body-lg font-bold text-on-surface">Budiman DB</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Basis data terpusat kepegawaian dan pencatatan riwayat kerja.</p></div><div class="p-4 rounded-2xl bg-surface-container-lowest/90 border border-outline-variant hover:border-secondary transition-all flex flex-col justify-between shadow-sm"><div class="flex items-center justify-between mb-2"><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-primary/15 text-primary font-bold">2021</span><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-secondary/15 text-secondary">IT</span></div><h4 class="font-headline-sm text-body-lg font-bold text-on-surface">SIACEP</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Sistem akurasi dan percepatan administrasi persuratan.</p></div><div class="p-4 rounded-2xl bg-surface-container-lowest/90 border border-outline-variant hover:border-secondary transition-all flex flex-col justify-between shadow-sm"><div class="flex items-center justify-between mb-2"><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-primary/15 text-primary font-bold">2020</span><span class="font-label-code-sm text-label-code-sm px-2 py-0.5 rounded bg-secondary/15 text-secondary">IT</span></div><h4 class="font-headline-sm text-body-lg font-bold text-on-surface">Progita</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Pionir digitalisasi arsip surat masuk/keluar di lingkungan dinas.</p></div></div></div></section><!-- SECTION: SPEAKER / PEMATERI SECTION --><section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-16" id="speaker-section"><div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-8"><div class="flex flex-col gap-2 max-w-2xl"><div class="inline-flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-accent-emerald"></span><span class="font-label-code-sm text-label-code-sm text-accent-emerald uppercase font-bold tracking-wider" data-i18n="section_speaker_tag">Aktivitas Pemateri &amp; Edukasi</span></div><h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight" data-i18n="section_speaker_title">Pemateri Digital Leadership &amp; AI</h2><p class="font-body-md text-body-md text-on-surface-variant" data-i18n="section_speaker_desc">Membagikan wawasan praktis seputar kecerdasan buatan (AI), kepemimpinan digital generasi muda, dan transformasi birokrasi cerdas.</p></div><a class="px-4 py-2.5 rounded-xl bg-accent-emerald/20 text-accent-emerald font-headline-sm text-body-sm font-semibold hover:bg-accent-emerald/30 transition-colors flex items-center gap-2 shadow-sm" href="https://wa.me/6289653288556?text=Halo%20Andu,%20saya%20ingin%20mengundang%20sebagai%20pemateri" target="_blank"><span class="material-symbols-outlined text-[18px]">record_voice_over</span><span data-i18n="btn_invite_speaker">Undang Pemateri</span></a></div><div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch"><!-- Main Feature Event --><div class="lg:col-span-7 rounded-3xl bg-surface-container/90 border border-outline-variant/60 p-6 sm:p-8 backdrop-blur-xl flex flex-col justify-between shadow-xl"><div class="flex flex-col gap-4"><div class="flex items-center justify-between"><span class="px-3 py-1 rounded-full bg-accent-emerald/20 text-accent-emerald font-label-code-sm text-label-code-sm font-bold">24 Oktober 2026</span><span class="font-label-code-sm text-label-code-sm text-on-surface-variant">LDKO OSIS 2026</span></div><h3 class="font-headline-md text-headline-sm text-on-surface font-bold leading-snug">LDKO OSIS SMK Negeri 14 Kota Bekasi</h3><p class="font-body-lg text-body-md text-secondary font-semibold">"Digital Leadership: Menjadi Pemimpin Berkarakter di Era Artificial Intelligence"</p><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Memberikan materi interaktif bagi ratusan pengurus OSIS SMK Negeri 14 Kota Bekasi mengenai pentingnya integritas, pemanfaatan AI secara produktif, etika digital, dan pembentukan karakter kepemimpinan transformasional di era otomasi.</p></div><div class="mt-6 pt-4 border-t border-outline-variant/40 flex items-center justify-between text-on-surface-variant font-label-code-sm text-label-code-sm"><span>📍 SMKN 14 Kota Bekasi</span><span class="text-accent-emerald flex items-center gap-1 font-semibold"><span class="material-symbols-outlined text-[16px]">verified</span> Terjadwal</span></div></div><!-- Speaker Topics Matrix --><div class="lg:col-span-5 rounded-3xl bg-surface-container/90 border border-outline-variant/60 p-6 sm:p-8 backdrop-blur-xl flex flex-col justify-between shadow-xl"><h4 class="font-headline-sm text-body-lg font-bold text-on-surface mb-3 flex items-center gap-2"><span class="material-symbols-outlined text-primary">psychology</span><span data-i18n="speaker_topics_title">Topik Sesi yang Dikuasai</span></h4><div class="flex flex-col gap-2.5"><div class="p-3 rounded-xl bg-surface-container-lowest/80 border border-outline-variant/60 flex items-start gap-2.5 shadow-sm"><span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span><span class="font-body-sm text-body-sm text-on-surface">Digital Leadership di Era AI</span></div><div class="p-3 rounded-xl bg-surface-container-lowest/80 border border-outline-variant/60 flex items-start gap-2.5 shadow-sm"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span><span class="font-body-sm text-body-sm text-on-surface">AI untuk Kinerja &amp; Pelaporan ASN</span></div><div class="p-3 rounded-xl bg-surface-container-lowest/80 border border-outline-variant/60 flex items-start gap-2.5 shadow-sm"><span class="material-symbols-outlined text-tertiary text-[18px] mt-0.5">check_circle</span><span class="font-body-sm text-body-sm text-on-surface">Dari Ide ke Aplikasi Android Nyata</span></div><div class="p-3 rounded-xl bg-surface-container-lowest/80 border border-outline-variant/60 flex items-start gap-2.5 shadow-sm"><span class="material-symbols-outlined text-accent-emerald text-[18px] mt-0.5">check_circle</span><span class="font-body-sm text-body-sm text-on-surface">Pengantar SPBE &amp; Digitalisasi Arsip</span></div><div class="p-3 rounded-xl bg-surface-container-lowest/80 border border-outline-variant/60 flex items-start gap-2.5 shadow-sm"><span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span><span class="font-body-sm text-body-sm text-on-surface">ASN sebagai Konten Kreator &amp; Etika AI</span></div></div></div></div></section><!-- SECTION: CAREER TIMELINE, SKILLS MATRIX & INDEXEDDB VAULT --><section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-16" id="cv-section"><div class="flex flex-col gap-3 mb-10"><div class="inline-flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-primary"></span><span class="font-label-code-sm text-label-code-sm text-primary uppercase font-bold tracking-wider" data-i18n="section_cv_tag">Riwayat Hidup &amp; Brankas Browser</span></div><h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight" data-i18n="section_cv_title">Pengalaman Kerja &amp; Matriks Keterampilan</h2><p class="font-body-md text-body-md text-on-surface-variant max-w-2xl" data-i18n="section_cv_desc">Riwayat karier nyata Abdul Salam Yunus, keahlian hardware dan software, serta fitur brankas lokal IndexedDB untuk menyimpan catatan interview dan bookmark.</p></div><div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"><!-- Left: Timeline & Skills (7 cols) --><div class="lg:col-span-7 flex flex-col gap-10"><div class="flex flex-col gap-6"><div class="flex items-center justify-between"><h3 class="font-headline-md text-headline-sm text-on-surface font-bold flex items-center gap-2"><span class="material-symbols-outlined text-secondary">history_edu</span><span data-i18n="cv_exp_heading">Pengalaman Kerja</span></h3><span class="font-label-code-sm text-label-code-sm text-on-surface-variant">2012 — Sekarang</span></div><div class="space-y-6"><!-- Item 1 --><div class="p-6 rounded-2xl bg-surface-container/90 backdrop-blur-md relative pl-8 border-l-4 border-primary shadow-sm"><span class="absolute -left-[10px] top-6 w-4 h-4 rounded-full bg-primary ring-4 ring-surface"></span><div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1"><h4 class="font-headline-sm text-body-lg text-on-surface font-bold">Founder &amp; Lead Android Developer</h4><span class="px-2 py-0.5 rounded bg-primary/20 text-primary font-label-code-sm text-label-code-sm font-semibold">2016 — Sekarang</span></div><span class="font-label-code-sm text-label-code-sm text-secondary font-medium">El-Salam Technology, Inc. • andu.my.id</span><p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed" data-i18n="exp_item_1">Merancang, membuat, dan merilis puluhan aplikasi Android di Google Play dengan basis pengguna aktif di Indonesia.</p></div><!-- Item 2 --><div class="p-6 rounded-2xl bg-surface-container/90 backdrop-blur-md relative pl-8 border-l-4 border-secondary shadow-sm"><span class="absolute -left-[10px] top-6 w-4 h-4 rounded-full bg-secondary ring-4 ring-surface"></span><div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1"><h4 class="font-headline-sm text-body-lg text-on-surface font-bold">Hardware &amp; IT Technical Specialist</h4><span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-code-sm text-label-code-sm">2022 — 2025</span></div><span class="font-label-code-sm text-label-code-sm text-secondary font-medium">SQL-PC • Bogor</span><p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed" data-i18n="exp_item_2">Perawatan berkala, diagnosa mendalam, troubleshooting perangkat keras, dan perbaikan komputer PC client.</p></div><!-- Item 3 --><div class="p-6 rounded-2xl bg-surface-container/90 backdrop-blur-md relative pl-8 border-l-4 border-tertiary shadow-sm"><span class="absolute -left-[10px] top-6 w-4 h-4 rounded-full bg-tertiary ring-4 ring-surface"></span><div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1"><h4 class="font-headline-sm text-body-lg text-on-surface font-bold">Hardware &amp; IT Technical Specialist</h4><span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-code-sm text-label-code-sm">2023 — 2024</span></div><span class="font-label-code-sm text-label-code-sm text-tertiary font-medium">ESTech Repairside • Bekasi</span><p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed" data-i18n="exp_item_3">Perbaikan, perakitan kustom komponen komputer, instalasi OS jaringan, dan perawatan PC kantor.</p></div><!-- Item 4 --><div class="p-6 rounded-2xl bg-surface-container/90 backdrop-blur-md relative pl-8 border-l-4 border-outline-variant shadow-sm"><span class="absolute -left-[10px] top-6 w-4 h-4 rounded-full bg-outline-variant ring-4 ring-surface"></span><div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1"><h4 class="font-headline-sm text-body-lg text-on-surface font-bold">Mitra Proyek / Project Partner</h4><span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-code-sm text-label-code-sm">2016 — 2017</span></div><span class="font-label-code-sm text-label-code-sm text-on-surface-variant font-medium">Fidic Fidelto</span><p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed" data-i18n="exp_item_4">Kolaborasi dalam proyek kemitraan teknologi informasi dan solusi perangkat lunak.</p></div><!-- Item 5 --><div class="p-6 rounded-2xl bg-surface-container/90 backdrop-blur-md relative pl-8 border-l-4 border-outline-variant shadow-sm"><span class="absolute -left-[10px] top-6 w-4 h-4 rounded-full bg-outline-variant ring-4 ring-surface"></span><div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1"><h4 class="font-headline-sm text-body-lg text-on-surface font-bold">Content Creator Partner</h4><span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-code-sm text-label-code-sm">2012 — 2019</span></div><span class="font-label-code-sm text-label-code-sm text-on-surface-variant font-medium">AVYC</span><p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed" data-i18n="exp_item_5">Membuat, mengedit, dan menerbitkan konten media digital edukatif dan informatif.</p></div></div></div><!-- SKILLS MATRIX --><div class="flex flex-col gap-4"><h3 class="font-headline-md text-headline-sm text-on-surface font-bold flex items-center gap-2"><span class="material-symbols-outlined text-primary">terminal</span><span data-i18n="skills_heading">Matriks Keterampilan &amp; Hardware</span></h3><div class="p-5 rounded-2xl bg-surface-container/90 backdrop-blur-md border border-outline-variant/60 flex flex-wrap gap-2 shadow-sm"><span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-secondary font-label-code-sm text-label-code-sm font-semibold border border-outline-variant/40">Kotlin</span><span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-secondary font-label-code-sm text-label-code-sm font-semibold border border-outline-variant/40">Jetpack Compose</span><span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-secondary font-label-code-sm text-label-code-sm font-semibold border border-outline-variant/40">Room Database</span><span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-primary font-label-code-sm text-label-code-sm font-semibold border border-outline-variant/40">HTML &amp; Tailwind CSS</span><span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-primary font-label-code-sm text-label-code-sm font-semibold border border-outline-variant/40">PWA (Progressive Web App)</span><span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-tertiary font-label-code-sm text-label-code-sm font-semibold border border-outline-variant/40">Generative AI</span><span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-tertiary font-label-code-sm text-label-code-sm font-semibold border border-outline-variant/40">Google Workspace</span><span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-accent-emerald font-label-code-sm text-label-code-sm font-semibold border border-outline-variant/40">Perbaikan PC &amp; Troubleshooting</span><span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-accent-emerald font-label-code-sm text-label-code-sm font-semibold border border-outline-variant/40">Video Content &amp; Media</span></div></div></div><!-- Right: IndexedDB Vault & Recruiter Feedback Widget (5 cols) --><div class="lg:col-span-5 flex flex-col gap-6 sticky top-24 no-print"><div class="rounded-3xl bg-surface-container/90 backdrop-blur-xl p-6 sm:p-8 shadow-2xl border border-outline-variant/60 relative"><div class="flex items-center justify-between pb-4 border-b border-outline-variant/40"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary">inventory_2</span><h3 class="font-headline-sm text-headline-sm text-on-surface font-bold" data-i18n="vault_title">Brankas Browser IndexedDB</h3></div><span class="px-2 py-0.5 rounded-full bg-accent-emerald/20 text-accent-emerald font-label-code-sm text-label-code-sm font-semibold">Lokal &amp; Privat</span></div><p class="font-body-sm text-body-sm text-on-surface-variant my-3" data-i18n="vault_desc">Tersimpan di IndexedDB browser Anda. Simpan bookmark aplikasi dari 18 katalog, catat evaluasi wawancara, dan ekspor arsip.</p><form class="flex flex-col gap-3 mt-2" id="note-form" onsubmit="event.preventDefault(); saveUserNote();"><div><label class="font-label-code-sm text-label-code-sm text-on-surface-variant block mb-1" data-i18n="vault_input_title" for="note-title-input">Judul / Topik Catatan</label><input class="w-full px-4 py-2 rounded-xl bg-surface-container-lowest text-on-surface font-body-sm focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant shadow-inner" id="note-title-input" placeholder="Misal: Review Aplikasi ASN Master" required="" type="text"/></div><div><label class="font-label-code-sm text-label-code-sm text-on-surface-variant block mb-1" data-i18n="vault_input_body" for="note-content-input">Isi Catatan / Evaluasi</label><textarea class="w-full px-4 py-2 rounded-xl bg-surface-container-lowest text-on-surface font-body-sm focus:outline-none focus:ring-2 focus:ring-primary border border-outline-variant resize-none shadow-inner" id="note-content-input" placeholder="Tulis catatan penting atau feedback di sini..." required="" rows="2"></textarea></div><div class="flex items-center gap-2 pt-1"><button class="flex-1 py-2.5 rounded-xl bg-primary-container text-white font-headline-sm text-body-sm font-semibold hover:bg-inverse-primary transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary-container/20 cursor-pointer" type="submit"><span class="material-symbols-outlined text-[18px]">save</span><span data-i18n="btn_save_vault">Simpan ke IndexedDB</span></button><button class="p-2.5 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors border border-outline-variant shadow-sm cursor-pointer" onclick="exportIndexedDBNotes()" title="Download Backup JSON" type="button"><span class="material-symbols-outlined text-[18px]">download</span></button></div></form><div class="mt-6 flex flex-col gap-3"><div class="flex items-center justify-between text-on-surface-variant"><span class="font-label-code-sm text-label-code-sm font-semibold" data-i18n="vault_saved_records">Data Tersimpan ('marks')</span><button class="font-label-code-sm text-label-code-sm text-error hover:underline" data-i18n="vault_clear_db" onclick="clearAllIndexedDBData()">Kosongkan DB</button></div><div class="flex flex-col gap-2 max-h-64 overflow-y-auto pr-1" id="indexeddb-records-list"><div class="p-3 rounded-xl bg-surface-container-lowest text-center font-label-code-sm text-on-surface-variant border border-outline-variant/40">Memuat data IndexedDB...</div></div></div></div></div></div></section><!-- SECTION: CONTACT, PESANER AUTH INTEGRATION & NOTIFICATIONS --><section class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-16" id="contact-section"><div class="rounded-3xl bg-gradient-to-br from-surface-container via-surface-container-low to-surface-container backdrop-blur-2xl p-8 sm:p-14 shadow-2xl border border-outline-variant/60 relative overflow-hidden"><div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start"><!-- Left Contact Channels --><div class="lg:col-span-5 flex flex-col gap-6"><div class="inline-flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-secondary"></span><span class="font-label-code-sm text-label-code-sm text-secondary uppercase font-bold tracking-wider" data-i18n="contact_tag">Jalur Komunikasi Langsung</span></div><h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight" data-i18n="contact_title">Mari Terhubung &amp; Berkolaborasi</h2><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed" data-i18n="contact_desc">Terbuka untuk diskusi proyek aplikasi Android, konsultasi digitalisasi instansi pemerintah daerah, dan sesi pemateri.</p><div class="flex flex-col gap-3"><a class="flex items-center gap-3 p-3 rounded-2xl bg-surface-container-lowest hover:bg-surface-container-high transition-colors border border-outline-variant shadow-sm" href="https://wa.me/6289653288556" rel="noopener noreferrer" target="_blank"><div class="w-10 h-10 rounded-xl bg-accent-emerald/20 flex items-center justify-center text-accent-emerald shrink-0"><span class="material-symbols-outlined text-[20px]">chat</span></div><div class="flex flex-col"><span class="font-label-code-sm text-label-code-sm text-on-surface-variant">WhatsApp</span><span class="font-headline-sm text-body-md text-on-surface font-semibold">0896-5328-8556</span></div></a><a class="flex items-center gap-3 p-3 rounded-2xl bg-surface-container-lowest hover:bg-surface-container-high transition-colors border border-outline-variant shadow-sm" href="mailto:abdulsalamyunus@gmail.com"><div class="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary shrink-0"><span class="material-symbols-outlined text-[20px]">alternate_email</span></div><div class="flex flex-col"><span class="font-label-code-sm text-label-code-sm text-on-surface-variant">Email Resmi</span><span class="font-headline-sm text-body-md text-on-surface font-semibold">abdulsalamyunus@gmail.com</span></div></a><a class="flex items-center gap-3 p-3 rounded-2xl bg-surface-container-lowest hover:bg-surface-container-high transition-colors border border-outline-variant shadow-sm" href="https://andu.my.id/" rel="noopener noreferrer" target="_blank"><div class="w-10 h-10 rounded-xl bg-secondary/20 flex items-center justify-center text-secondary shrink-0"><span class="material-symbols-outlined text-[20px]">language</span></div><div class="flex flex-col"><span class="font-label-code-sm text-label-code-sm text-on-surface-variant">Website Pribadi</span><span class="font-headline-sm text-body-md text-secondary font-semibold">https://andu.my.id/</span></div></a><div class="grid grid-cols-3 gap-2 pt-1"><a class="flex items-center justify-center gap-1.5 p-2.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high text-on-surface text-label-code-sm border border-outline-variant shadow-sm transition-colors" href="https://id.linkedin.com/in/abdulsalamyunus" rel="noopener noreferrer" target="_blank"><span>LinkedIn</span></a><a class="flex items-center justify-center gap-1.5 p-2.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high text-on-surface text-label-code-sm border border-outline-variant shadow-sm transition-colors" href="https://www.youtube.com/@AbdulSalamYunus" rel="noopener noreferrer" target="_blank"><span>YouTube</span></a><a class="flex items-center justify-center gap-1.5 p-2.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high text-on-surface text-label-code-sm border border-outline-variant shadow-sm transition-colors" href="https://www.instagram.com/abdulsalamyunus" rel="noopener noreferrer" target="_blank"><span>Instagram</span></a></div><!-- Push Notification Controls Box --><div class="p-4 rounded-2xl bg-surface-container-lowest/90 border border-outline-variant shadow-sm flex flex-col gap-3 mt-2"><div class="flex items-center justify-between"><span class="font-label-code-sm text-label-code-sm font-bold text-secondary flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-accent-emerald animate-pulse"></span> Notifikasi Web Browser</span><span class="font-label-code-sm text-[11px] text-on-surface-variant" id="notif-perm-label">Siap Uji Coba</span></div><div class="flex items-center gap-2"><button class="flex-1 py-2 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-code-sm text-label-code-sm font-semibold transition-colors flex items-center justify-center gap-1 border border-outline-variant/50" onclick="requestBrowserNotification()"><span class="material-symbols-outlined text-[16px]">notifications</span><span data-i18n="btn_enable_notif">Aktifkan Notifikasi</span></button><button class="px-3 py-2 rounded-xl bg-secondary/15 hover:bg-secondary/25 text-secondary font-label-code-sm text-label-code-sm font-semibold transition-colors flex items-center justify-center gap-1 border border-secondary/30" onclick="triggerSimulatedPush('Halo dari Andu!', 'Notifikasi uji coba berhasil dikirim dari sistem andu.my.id', 'campaign', 'secondary')"><span class="material-symbols-outlined text-[16px]">send</span><span data-i18n="btn_test_notif">Tes Notifikasi</span></button></div></div></div></div><!-- Right: Pesaner Auth Integration Card --><div class="lg:col-span-7"><div class="p-6 sm:p-8 rounded-3xl bg-surface-container-lowest/95 backdrop-blur-xl flex flex-col gap-4 shadow-xl border border-outline-variant/60"><div class="flex items-center justify-between pb-3 border-b border-outline-variant/40"><div class="flex items-center gap-2"><span class="text-2xl">🌈</span><div><h3 class="font-headline-md text-headline-sm text-on-surface font-bold">Pesaner Auth Gateway</h3><p class="font-label-code-sm text-label-code-sm text-on-surface-variant">https://pesaner.andu.my.id/</p></div></div><a class="p-2 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-secondary transition-colors" href="https://pesaner.andu.my.id/" rel="noopener noreferrer" target="_blank" title="Buka Pesaner Web"><span class="material-symbols-outlined text-[20px]">open_in_new</span></a></div><p class="font-body-sm text-body-sm text-on-surface-variant" data-i18n="pesaner_desc">Ingin menghubungi saya secara langsung lewat aplikasi? Masuk atau daftar lewat portal Pesaner di bawah ini untuk memulai obrolan terenkripsi.</p><!-- Auth Tabs --><div class="flex items-center bg-surface-container rounded-xl p-1 border border-outline-variant/40"><button class="flex-1 py-2 rounded-lg font-label-code-sm text-label-code-sm font-bold bg-surface-container-high text-on-surface transition-all shadow-sm" id="tab-pesaner-login" onclick="switchPesanerTab('login')">Masuk (Login)</button><button class="flex-1 py-2 rounded-lg font-label-code-sm text-label-code-sm text-on-surface-variant hover:text-on-surface transition-all" id="tab-pesaner-register" onclick="switchPesanerTab('register')">Daftar Akun Baru (Register)</button></div><!-- Pesaner Form --><form class="flex flex-col gap-3 pt-2" id="pesaner-form" onsubmit="event.preventDefault(); handlePesanerAuth();"><div id="field-pesaner-name" style="display: none;"><label class="font-label-code-sm text-label-code-sm text-on-surface-variant block mb-1" for="pesaner-name">Nama Lengkap</label><input class="w-full px-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm focus:outline-none focus:ring-2 focus:ring-secondary border border-outline-variant shadow-inner" id="pesaner-name" placeholder="Nama Anda" type="text"/></div><div><label class="font-label-code-sm text-label-code-sm text-on-surface-variant block mb-1" for="pesaner-email">Alamat Email / ID Pesaner</label><input class="w-full px-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm focus:outline-none focus:ring-2 focus:ring-secondary border border-outline-variant shadow-inner" id="pesaner-email" placeholder="nama@email.com" required="" type="email"/></div><div><label class="font-label-code-sm text-label-code-sm text-on-surface-variant block mb-1" for="pesaner-password">Kata Sandi (Password)</label><input class="w-full px-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm focus:outline-none focus:ring-2 focus:ring-secondary border border-outline-variant shadow-inner" id="pesaner-password" placeholder="••••••••" required="" type="password"/></div><div class="pt-2"><button class="w-full py-3.5 rounded-xl bg-primary-container hover:bg-inverse-primary text-white font-headline-sm text-body-md font-bold transition-all shadow-lg shadow-primary-container/25 flex items-center justify-center gap-2 cursor-pointer" id="pesaner-submit-btn" type="submit"><span class="material-symbols-outlined text-[20px]">login</span><span id="pesaner-btn-label">Masuk ke Pesaner &amp; Kirim Pesan</span></button></div><p class="font-label-code-sm text-[12px] text-center text-on-surface-variant mt-1">Mengalihkan secara aman ke ekosistem <a class="text-secondary hover:underline" href="https://pesaner.andu.my.id/" target="_blank">pesaner.andu.my.id</a></p></form></div></div></div></div></section></div></main><!-- FOOTER --><footer class="w-full bg-surface-container-low mt-space-xl py-space-xl border-t border-outline-variant/50 no-print transition-colors duration-200"><div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-space-lg"><div class="flex flex-col items-center md:items-start gap-space-xs"><div class="flex items-center gap-space-sm"><img alt="Andu Tech Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WIPay2IVNN_ZJ5GCbmVt-ZvIO2Gncn_xVUKx1Zu3CpulhjgdMu1I8CtkF7Critlzs6KD3ovKcK-jzRbUeBQTdO1JkW_MINadGTHLvva69YvGtvjcmSM6ZymYJF2pFBi3L8dfchCi0UBF6T7jqIpAKXVL4hab5XAttb8gQXoVAkF8fY5QcH7RQzJHJ89VkZIBq3dMUXfUEA9aCIx9319kDilINrgwytc_mjZVWMkS5RkeBlyMTh3Jz6baY"/><span class="font-headline-sm text-headline-sm text-on-surface">El-Salam Technology, Inc.</span></div><p class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left">© 2026 Abdul Salam Yunus (Andu). Dibangun dengan dedikasi untuk performa dan dampak nyata.</p></div><div class="flex items-center gap-space-sm"><a class="px-3 py-1 rounded-full font-label-code-sm text-label-code-sm bg-surface-container text-secondary flex items-center gap-1.5 border border-outline-variant shadow-sm" href="https://andu.my.id" rel="noopener noreferrer" target="_blank"><span class="w-2 h-2 rounded-full bg-accent-emerald animate-pulse"></span>andu.my.id</a></div><div class="flex items-center gap-space-md"><a aria-label="WhatsApp" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors shadow-sm" href="https://wa.me/6289653288556" target="_blank"><span class="material-symbols-outlined text-[20px]">chat</span></a><a aria-label="Google Play" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors shadow-sm" href="https://play.google.com/store/apps/developer?id=El-Salam+Technology,+Inc." target="_blank"><span class="material-symbols-outlined text-[20px]">android</span></a><a aria-label="LinkedIn" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors shadow-sm" href="https://id.linkedin.com/in/abdulsalamyunus" target="_blank"><span class="material-symbols-outlined text-[20px]">badge</span></a><a aria-label="Email" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors shadow-sm" href="mailto:abdulsalamyunus@gmail.com"><span class="material-symbols-outlined text-[20px]">mail</span></a></div></div></footer><!-- JAVASCRIPT LOGIC --><script>
+  // 18 REAL AUTHENTIC APPS DATA FROM DOCUMENT_2
+  const authenticApps = [
+    // GOV (Kinerja & Pemerintahan)
+    { id: "asnmaster", category: "gov", emoji: "🧠", title: "ASN Master", tag: "AI Laporan Kinerja", desc_id: "Solusi AI cerdas untuk otomasi dan penyusunan laporan kinerja ASN secara cepat & terstruktur.", desc_en: "Smart AI solution for automated generation of civil servant performance evaluations and reports.", url: "https://play.google.com/store/apps/details?id=com.ekintools.asnmaster" },
+    { id: "ekinreminder", category: "gov", emoji: "⏰", title: "eKin Reminder", tag: "Asisten eKin", desc_id: "Pengingat dan asisten pintar pengisian laporan kinerja harian eKin tepat waktu.", desc_en: "Smart reminder and assistant for punctually filling daily eKin civil servant performance logs.", url: "https://play.google.com/store/apps/details?id=com.asn.ekinreminder" },
+    { id: "progita", category: "gov", emoji: "🗂️", title: "Progita", tag: "Digitalisasi Arsip", desc_id: "Digitalisasi arsip surat masuk dan keluar terpadu untuk lingkungan instansi pemerintah.", desc_en: "Integrated incoming and outgoing official correspondence digitization for government departments.", url: "https://play.google.com/store/apps/details?id=id.progita.app" },
+    { id: "sininja", category: "gov", emoji: "📓", title: "Sininja", tag: "Jurnal Harian Kinerja", desc_id: "Pencatatan jurnal harian capaian kinerja aparatur dengan integrasi cepat.", desc_en: "Fast daily work journal logger and tracker tailored for public servants.", url: "https://play.google.com/store/apps/details?id=com.elsalamtech.sininja" },
+    { id: "docusanai", category: "gov", emoji: "📄", title: "DocuScanAI", tag: "Scan Dokumen AI", desc_id: "Pindai dan ekstraksi isi dokumen fisik berbasis kecerdasan buatan langsung ke teks digital.", desc_en: "AI-powered document scanner and OCR text extractor for physical official papers.", url: "https://play.google.com/store/apps/details?id=com.elsalamtechnology.docusanai" },
+    { id: "optima", category: "gov", emoji: "📈", title: "Optima", tag: "AI Performance Tracker", desc_id: "Pemantau analitik produktivitas dan metrik capaian sasaran kinerja pegawai.", desc_en: "AI-driven performance tracker and employee productivity analytics dashboard.", url: "https://play.google.com/store/apps/details?id=com.elsalamtech.optima" },
+
+    // MONEY (Keuangan & Produktivitas)
+    { id: "vault", category: "money", emoji: "💰", title: "Vault", tag: "Smart Expense & Asset", desc_id: "Pelacak pengeluaran, portofolio aset, dan manajemen anggaran pribadi yang aman.", desc_en: "Secure personal expense tracker, asset portfolio manager, and budget planner.", url: "https://play.google.com/store/apps/details?id=com.elsalamtech.vault" },
+    { id: "chic", category: "money", emoji: "👛", title: "Chic", tag: "Expense & Lifestyle", desc_id: "Aplikasi pencatat keuangan estetik dan ringkas untuk kebutuhan belanja harian.", desc_en: "Chic and minimalist daily expense and lifestyle budget manager.", url: "https://play.google.com/store/apps/details?id=com.elsalamtech.chic" },
+    { id: "aegis", category: "money", emoji: "🛡️", title: "AEGIS", tag: "Smart Asset Tracker", desc_id: "Benteng pelindung aset dan pelacak akumulasi kekayaan bersih multi-instrumen.", desc_en: "Smart multi-instrument asset shield and net worth accumulation monitor.", url: "https://play.google.com/store/apps/details?id=com.elsalamtech.aegis" },
+    { id: "sync", category: "money", emoji: "🔁", title: "Sync", tag: "Pelacak Langganan", desc_id: "Monitor langganan bulanan berulang dan notifikasi tagihan sebelum jatuh tempo.", desc_en: "Recurring subscription expense tracker with proactive payment due alerts.", url: "https://play.google.com/store/apps/details?id=com.elsalamtech.sync" },
+    { id: "quizfinancialfreedom", category: "money", emoji: "🎯", title: "Kuis Financial Freedom", tag: "Edukasi Keuangan", desc_id: "Kuis interaktif menguji kecerdasan finansial menuju kebebasan keuangan mandiri.", desc_en: "Interactive financial literacy quizzes helping users test roadmaps to freedom.", url: "https://play.google.com/store/apps/details?id=com.elsalamtech.quizfinancialfreedom" },
+    { id: "lifeos", category: "money", emoji: "🧩", title: "LifeOS", tag: "Personal Vault Tracker", desc_id: "Sistem operasi produktivitas dan brankas personal terintegrasi.", desc_en: "All-in-one personal operating system for productivity tasks and private vault tracking.", url: "https://play.google.com/store/apps/details?id=com.elsalamtech.lifeos" },
+
+    // LIFE (Kesehatan & Gaya Hidup)
+    { id: "pesaner", category: "life", emoji: "🌈", title: "Pesaner", tag: "Mood & Chat Connection", desc_id: "Aplikasi pencatat emosi harian sekaligus koneksi percakapan ekspresif yang ramah.", desc_en: "Expressive mood journal tracker and friendly peer conversation bridge.", url: "https://play.google.com/store/apps/details?id=com.elsalamtechnology.pesaner" },
+    { id: "zenith", category: "life", emoji: "🧘", title: "Zenith", tag: "Mood Journal Tracker", desc_id: "Jurnal refleksi ketenangan pikiran, mindful living, dan pencatatan kesehatan mental.", desc_en: "Mindfulness companion, mental wellness logger, and serene mood diary.", url: "https://play.google.com/store/apps/details?id=com.elsalamtech.zenith" },
+    { id: "apex", category: "life", emoji: "💪", title: "APEX", tag: "Strength & Gain Tracker", desc_id: "Pelacak repetisi latihan beban dan progres kekuatan fisik di gym secara presisi.", desc_en: "Precision strength, hypertrophy, and gym lifting workout tracker.", url: "https://play.google.com/store/apps/details?id=com.elsalamtech.apex" },
+    { id: "pulse", category: "life", emoji: "❤️", title: "Pulse", tag: "Smart Health Tracker", desc_id: "Pencatat denyut nadi, hidrasi tubuh, dan pola kebiasaan hidup sehat harian.", desc_en: "Daily hydration, heart wellness logs, and healthy habit habit tracker.", url: "https://play.google.com/store/apps/details?id=com.elsalamtech.pulse" },
+    { id: "torque", category: "life", emoji: "🏍️", title: "Torque", tag: "Pelacak Kendaraan", desc_id: "Pelacak jadwal servis berkala, riwayat oli, dan pengeluaran bahan bakar kendaraan.", desc_en: "Vehicle maintenance log, service interval reminders, and fuel tracking.", url: "https://play.google.com/store/apps/details?id=com.elsalamtech.torque" },
+
+    // BIZ (Enterprise)
+    { id: "seosaner", category: "biz", emoji: "🔍", title: "Seosaner", tag: "Enterprise SEO Audit", desc_id: "Alat audit performa SEO website profesional untuk meningkatkan visibilitas mesin pencari.", desc_en: "Professional enterprise SEO audit and technical website visibility inspection tool.", url: "https://play.google.com/store/apps/details?id=com.elsalam.seosaner" }
+  ];
+
+  // Bilingual Dictionary
+  const i18nDictionary = {
+    ID: {
+      nav_overview: "Beranda",
+      nav_apps: "18 Aplikasi Android",
+      nav_innovations: "Inovasi Daerah",
+      nav_speaker: "Pemateri",
+      nav_cv: "CV & Vault",
+      nav_contact: "Kontak",
+      btn_print: "Print CV",
+      hero_pill: "Terbuka untuk undangan pemateri & kolaborasi",
+      hero_salute: "Halo, saya",
+      hero_callme: "Panggil saja Andu 👋",
+      hero_summary: "Founder El-Salam Technology, Inc. Saya membuat aplikasi Android, memimpin inovasi digital di pemerintahan daerah, dan berbagi soal AI serta kepemimpinan.",
+      stat_apps: "Aplikasi Android Play Store",
+      stat_innovations: "Inovasi PKA & PKP Kota Bekasi",
+      stat_builder: "Membangun sejak 2016",
+      stat_speaker: "Pemateri Utama LDKO 2026",
+      cta_explore_apps: "Jelajahi 18 Aplikasi",
+      cta_cv_notes: "CV & Brankas Catatan",
+      cta_test_notif: "Tes Notifikasi",
+      section_apps_tag: "Portofolio Google Play Resmi",
+      section_apps_title: "18 Aplikasi Android El-Salam Technology, Inc.",
+      section_apps_desc: "Daftar lengkap 18 aplikasi Android yang dirancang, dibangun, dan dipublikasikan resmi di Google Play Store oleh Abdul Salam Yunus.",
+      section_innov_tag: "Pimpinan Tim Inovasi (PKA & PKP)",
+      section_innov_title: "10 Proyek Inovasi Pemerintah Kota Bekasi",
+      section_innov_desc: "Rancangan dan pimpinan implementasi aksi perubahan teknologi & administrasi tata kelola pemerintahan Kota Bekasi sejak 2020 hingga 2026.",
+      section_speaker_tag: "Aktivitas Pemateri & Edukasi",
+      section_speaker_title: "Pemateri Digital Leadership & AI",
+      section_speaker_desc: "Membagikan wawasan praktis seputar kecerdasan buatan (AI), kepemimpinan digital generasi muda, dan transformasi birokrasi cerdas.",
+      btn_invite_speaker: "Undang Pemateri",
+      speaker_topics_title: "Topik Sesi yang Dikuasai",
+      section_cv_tag: "Riwayat Hidup & Brankas Browser",
+      section_cv_title: "Pengalaman Kerja & Matriks Keterampilan",
+      section_cv_desc: "Riwayat karier nyata Abdul Salam Yunus, keahlian hardware dan software, serta fitur brankas lokal IndexedDB untuk menyimpan catatan interview dan bookmark.",
+      cv_exp_heading: "Pengalaman Kerja",
+      skills_heading: "Matriks Keterampilan & Hardware",
+      vault_title: "Brankas Browser IndexedDB",
+      vault_desc: "Tersimpan di IndexedDB browser Anda. Simpan bookmark aplikasi dari 18 katalog, catat evaluasi wawancara, dan ekspor arsip.",
+      vault_input_title: "Judul / Topik Catatan",
+      vault_input_body: "Isi Catatan / Evaluasi",
+      btn_save_vault: "Simpan ke IndexedDB",
+      vault_saved_records: "Data Tersimpan ('marks')",
+      vault_clear_db: "Kosongkan DB",
+      contact_tag: "Jalur Komunikasi Langsung",
+      contact_title: "Mari Terhubung & Berkolaborasi",
+      contact_desc: "Terbuka untuk diskusi proyek aplikasi Android, konsultasi digitalisasi instansi pemerintah daerah, dan sesi pemateri.",
+      btn_enable_notif: "Aktifkan Notifikasi",
+      btn_test_notif: "Tes Notifikasi",
+      pesaner_desc: "Ingin menghubungi saya secara langsung lewat aplikasi? Masuk atau daftar lewat portal Pesaner di bawah ini untuk memulai obrolan terenkripsi."
+    },
+    EN: {
+      nav_overview: "Overview",
+      nav_apps: "18 Android Apps",
+      nav_innovations: "Public Innovation",
+      nav_speaker: "Speaker",
+      nav_cv: "CV & Vault",
+      nav_contact: "Contact",
+      btn_print: "Print CV",
+      hero_pill: "Open for Speaker Invites & Collaborations",
+      hero_salute: "Hi, I'm",
+      hero_callme: "Just call me Andu 👋",
+      hero_summary: "Founder of El-Salam Technology, Inc. I build Android apps, lead digital innovation in local government, and share about AI and leadership.",
+      stat_apps: "Android Apps on Play Store",
+      stat_innovations: "City Government Innovations",
+      stat_builder: "Building since 2016",
+      stat_speaker: "Keynote Speaker LDKO 2026",
+      cta_explore_apps: "Explore 18 Apps",
+      cta_cv_notes: "CV & Recruiter Vault",
+      cta_test_notif: "Test Notification",
+      section_apps_tag: "Official Google Play Portfolio",
+      section_apps_title: "18 Android Apps by El-Salam Technology, Inc.",
+      section_apps_desc: "Comprehensive catalog of all 18 production Android apps engineered and published on Google Play by Abdul Salam Yunus.",
+      section_innov_tag: "Innovation Team Lead (PKA & PKP)",
+      section_innov_title: "10 City Government Innovation Projects",
+      section_innov_desc: "Led the software engineering and administrative transformation projects for Bekasi City Government from 2020 through 2026.",
+      section_speaker_tag: "Keynote Speaking & Education",
+      section_speaker_title: "Digital Leadership & AI Speaker",
+      section_speaker_desc: "Sharing actionable frameworks on artificial intelligence, youth digital leadership, and public sector smart modernization.",
+      btn_invite_speaker: "Invite as Speaker",
+      speaker_topics_title: "Core Keynote & Workshop Topics",
+      section_cv_tag: "Curriculum Vitae & Local Vault",
+      section_cv_title: "Professional Timeline & Technical Matrix",
+      section_cv_desc: "Real-world track record of Abdul Salam Yunus, hardware & software stack, plus an IndexedDB recruiter notebook.",
+      cv_exp_heading: "Work Experience",
+      skills_heading: "Skills & Hardware Matrix",
+      vault_title: "Browser IndexedDB Vault",
+      vault_desc: "Stored securely in your browser's IndexedDB. Star your favorite apps from the 18 catalog, write recruiter notes, and export JSON.",
+      vault_input_title: "Note / Candidate Topic",
+      vault_input_body: "Confidential Notes / Evaluation",
+      btn_save_vault: "Save to IndexedDB",
+      vault_saved_records: "Stored Records ('marks')",
+      vault_clear_db: "Clear Database",
+      contact_tag: "Direct Channels",
+      contact_title: "Let's Connect & Collaborate",
+      contact_desc: "Available for Android app contracts, municipal digital transformations, and keynote speaking engagements.",
+      btn_enable_notif: "Enable Push Alerts",
+      btn_test_notif: "Test Alert",
+      pesaner_desc: "Want to connect directly through an app? Sign in or register via the Pesaner gateway below to start an encrypted chat."
+    }
+  };
+
+  let currentLang = 'ID';
+  const roleList = {
+    ID: ["Pengembang Aplikasi Android", "ASN & Inovator Digital", "Pemateri Digital Leadership", "Pembuat Aplikasi AI"],
+    EN: ["Android App Developer", "Civil Servant & Digital Innovator", "Digital Leadership Speaker", "AI App Builder"]
+  };
+  let roleIdx = 0;
+  let typewriterInterval;
+
+  // Render 18 Apps
+  function renderApps(categoryFilter = 'all') {
+    const grid = document.getElementById('apps-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    const filtered = categoryFilter === 'all' ? authenticApps : authenticApps.filter(a => a.category === categoryFilter);
+
+    filtered.forEach(app => {
+      const isBookmarked = bookmarkedAppIds.has(app.id);
+      const card = document.createElement('div');
+      card.className = "app-card group rounded-3xl bg-surface-container/90 backdrop-blur-xl p-6 border border-outline-variant/60 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:border-secondary/60 hover:-translate-y-1 shadow-sm";
+      card.innerHTML = `
+        <div class="flex flex-col gap-4">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-14 h-14 rounded-2xl bg-surface-container-high border border-outline-variant flex items-center justify-center text-3xl shadow-inner shrink-0 group-hover:scale-105 transition-transform">
+                ${app.emoji}
+              </div>
+              <div class="flex flex-col">
+                <h3 class="font-headline-sm text-body-lg font-bold text-on-surface leading-snug">${app.title}</h3>
+                <span class="font-label-code-sm text-label-code-sm text-secondary font-medium">${app.tag}</span>
+              </div>
             </div>
-    
-            <p class="footer__copy">
-                <a href="https://www.youtube.com/c/AbdulSalamYunus/" target="_blank" class="footer__copy-link">&#169; Abdul Salam Yunus. All right reserved</a>
-            </p>
-        </footer>
+            <button onclick="toggleAppBookmark('${app.id}', '${app.title}', '${app.emoji}')" class="p-2 rounded-xl bg-surface-container-high hover:bg-surface-container-highest transition-colors ${isBookmarked ? 'text-tertiary' : 'text-on-surface-variant'}" title="Simpan ke Bookmark">
+              <span class="material-symbols-outlined text-[20px]">${isBookmarked ? 'star' : 'star_border'}</span>
+            </button>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            ${currentLang === 'ID' ? app.desc_id : app.desc_en}
+          </p>
+        </div>
+        <div class="pt-5 mt-4 border-t border-outline-variant/40 flex items-center justify-between">
+          <a href="${app.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-primary hover:text-secondary font-headline-sm text-body-sm font-semibold transition-colors">
+            <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+            <span>Google Play</span>
+          </a>
+          <button onclick="triggerSimulatedPush('${app.title}', 'Aplikasi ${app.title} siap dipasang melalui Google Play Store', 'shop', 'secondary')" class="px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-code-sm text-[11px] transition-colors border border-outline-variant/40">
+            Ping Notif
+          </button>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
 
-        <!--=============== SCROLL UP ===============-->
-        <a href="#" class="scrollup" id="scroll-up">
-            <i class="ri-arrow-up-s-line scrollup__icon"></i>
-        </a>
-        
-        
-        <!--=============== SCROLL REVEAL ===============-->
-        <script src="assets/js/scrollreveal.min.js"></script>
+  function filterApps(cat) {
+    const btns = document.querySelectorAll('.app-filter-btn');
+    btns.forEach(b => {
+      b.classList.remove('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+      b.classList.add('text-on-surface-variant');
+    });
+    event?.currentTarget?.classList?.add('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+    event?.currentTarget?.classList?.remove('text-on-surface-variant');
+    renderApps(cat);
+  }
 
-        <!--=============== MAIN JS ===============-->
-        <script src="assets/js/main.js"></script>
-    </body>
-</html>
+  // Typewriter Effect
+  function startTypewriter() {
+    clearInterval(typewriterInterval);
+    const target = document.getElementById('role-typewriter');
+    if (!target) return;
+    const roles = roleList[currentLang];
+    target.textContent = roles[roleIdx % roles.length];
+
+    typewriterInterval = setInterval(() => {
+      roleIdx++;
+      target.textContent = roles[roleIdx % roles.length];
+    }, 2800);
+  }
+
+  // Bilingual Switcher
+  function setLanguage(lang) {
+    currentLang = lang;
+    const dict = i18nDictionary[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key]) el.textContent = dict[key];
+    });
+
+    const btnId = document.getElementById('btn-lang-id');
+    const btnEn = document.getElementById('btn-lang-en');
+    if (lang === 'ID') {
+      btnId.classList.add('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+      btnId.classList.remove('text-on-surface-variant');
+      btnEn.classList.remove('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+      btnEn.classList.add('text-on-surface-variant');
+    } else {
+      btnEn.classList.add('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+      btnEn.classList.remove('text-on-surface-variant');
+      btnId.classList.remove('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+      btnId.classList.add('text-on-surface-variant');
+    }
+
+    startTypewriter();
+    renderApps();
+    showToast(lang === 'ID' ? 'Bahasa diubah ke Bahasa Indonesia' : 'Language switched to English', 'translate', 'secondary');
+  }
+
+  // ==========================================
+  // ROBUST THEME TOGGLE (DARK <-> LIGHT)
+  // ==========================================
+  function applyTheme(theme) {
+    const html = document.documentElement;
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+
+    if (theme === 'light') {
+      html.classList.remove('dark');
+      html.classList.add('light');
+      body.classList.remove('dark');
+      body.classList.add('light');
+      html.setAttribute('data-theme', 'light');
+      if (icon) icon.textContent = 'light_mode';
+    } else {
+      html.classList.remove('light');
+      html.classList.add('dark');
+      body.classList.remove('light');
+      body.classList.add('dark');
+      html.setAttribute('data-theme', 'dark');
+      if (icon) icon.textContent = 'dark_mode';
+    }
+
+    try {
+      localStorage.setItem('andu_theme_pref', theme);
+    } catch (e) {
+      console.warn('LocalStorage error', e);
+    }
+
+    // Also persist theme preference in IndexedDB if ready
+    saveThemeToIndexedDB(theme);
+  }
+
+  function toggleTheme() {
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute('data-theme') || (html.classList.contains('light') ? 'light' : 'dark');
+    const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+    applyTheme(nextTheme);
+    showToast(
+      nextTheme === 'light' ? 'Mode terang (Light Mode) aktif ☀️' : 'Mode gelap (Dark Mode) aktif 🌙',
+      nextTheme === 'light' ? 'light_mode' : 'dark_mode',
+      'primary'
+    );
+  }
+
+  function initThemePreference() {
+    let savedTheme = null;
+    try {
+      savedTheme = localStorage.getItem('andu_theme_pref');
+    } catch (e) {}
+
+    if (!savedTheme) {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        savedTheme = 'light';
+      } else {
+        savedTheme = 'dark';
+      }
+    }
+    applyTheme(savedTheme);
+  }
+
+  // ==========================================
+  // INDEXEDDB ENGINE ('marks' & Notes Store)
+  // ==========================================
+  const DB_NAME = 'AnduCvVaultDB';
+  const DB_VERSION = 3;
+  const STORE_MARKS = 'marks';
+  const STORE_SETTINGS = 'settings';
+  let dbInstance = null;
+  const bookmarkedAppIds = new Set();
+
+  function initIndexedDB() {
+    const request = indexedDB.open(DB_NAME, DB_VERSION);
+
+    request.onupgradeneeded = (e) => {
+      const db = e.target.result;
+      if (!db.objectStoreNames.contains(STORE_MARKS)) {
+        const store = db.createObjectStore(STORE_MARKS, { keyPath: 'id', autoIncrement: true });
+        store.createIndex('appId', 'appId', { unique: false });
+        store.createIndex('type', 'type', { unique: false });
+      }
+      if (!db.objectStoreNames.contains(STORE_SETTINGS)) {
+        db.createObjectStore(STORE_SETTINGS, { keyPath: 'key' });
+      }
+    };
+
+    request.onsuccess = (e) => {
+      dbInstance = e.target.result;
+      loadSavedMarks();
+      checkIndexedDBTheme();
+    };
+
+    request.onerror = (e) => {
+      console.warn('IndexedDB failed, fallback active', e);
+    };
+  }
+
+  function saveThemeToIndexedDB(theme) {
+    if (!dbInstance) return;
+    try {
+      const tx = dbInstance.transaction(STORE_SETTINGS, 'readwrite');
+      const store = tx.objectStore(STORE_SETTINGS);
+      store.put({ key: 'theme', value: theme, updated: Date.now() });
+    } catch (err) {
+      // ignore
+    }
+  }
+
+  function checkIndexedDBTheme() {
+    if (!dbInstance) return;
+    try {
+      const tx = dbInstance.transaction(STORE_SETTINGS, 'readonly');
+      const store = tx.objectStore(STORE_SETTINGS);
+      const req = store.get('theme');
+      req.onsuccess = () => {
+        if (req.result && req.result.value && !localStorage.getItem('andu_theme_pref')) {
+          applyTheme(req.result.value);
+        }
+      };
+    } catch (err) {}
+  }
+
+  function loadSavedMarks() {
+    if (!dbInstance) return;
+    const tx = dbInstance.transaction(STORE_MARKS, 'readonly');
+    const store = tx.objectStore(STORE_MARKS);
+    const getAllReq = store.getAll();
+
+    getAllReq.onsuccess = () => {
+      const records = getAllReq.result || [];
+      bookmarkedAppIds.clear();
+      records.forEach(r => {
+        if (r.type === 'app_bookmark' && r.appId) {
+          bookmarkedAppIds.add(r.appId);
+        }
+      });
+
+      // Update counters
+      const counterEl = document.getElementById('saved-bookmarks-counter');
+      if (counterEl) {
+        counterEl.textContent = `${bookmarkedAppIds.size} ${currentLang === 'ID' ? 'Tersimpan' : 'Saved'}`;
+      }
+
+      // Render records list
+      const listEl = document.getElementById('indexeddb-records-list');
+      if (!listEl) return;
+      if (records.length === 0) {
+        listEl.innerHTML = `
+          <div class="p-3 rounded-xl bg-surface-container-lowest text-center font-label-code-sm text-on-surface-variant border border-outline-variant/40">
+            ${currentLang === 'ID' ? 'Belum ada catatan atau bookmark tersimpan.' : 'No notes or bookmarks stored yet.'}
+          </div>
+        `;
+        return;
+      }
+
+      listEl.innerHTML = '';
+      records.reverse().forEach(item => {
+        const isApp = item.type === 'app_bookmark';
+        const card = document.createElement('div');
+        card.className = "p-2.5 rounded-xl bg-surface-container-lowest flex items-start justify-between gap-2 border border-outline-variant/60 shadow-sm";
+        card.innerHTML = `
+          <div class="flex items-start gap-2 text-left">
+            <span class="material-symbols-outlined text-[16px] mt-0.5 ${isApp ? 'text-tertiary' : 'text-primary'}">
+              ${isApp ? 'star' : 'description'}
+            </span>
+            <div class="flex flex-col">
+              <span class="font-headline-sm text-label-code-sm font-bold text-on-surface leading-tight">${item.title}</span>
+              <p class="font-body-sm text-[11px] text-on-surface-variant line-clamp-1">${item.content || ''}</p>
+              <span class="font-label-code-sm text-[9px] text-outline mt-0.5">${item.timestamp}</span>
+            </div>
+          </div>
+          <button onclick="deleteRecord(${item.id})" class="text-on-surface-variant hover:text-error p-1 cursor-pointer" title="Hapus">
+            <span class="material-symbols-outlined text-[14px]">delete</span>
+          </button>
+        `;
+        listEl.appendChild(card);
+      });
+
+      renderApps();
+    };
+  }
+
+  function toggleAppBookmark(appId, appTitle, appEmoji) {
+    if (!dbInstance) return;
+    const tx = dbInstance.transaction(STORE_MARKS, 'readwrite');
+    const store = tx.objectStore(STORE_MARKS);
+
+    if (bookmarkedAppIds.has(appId)) {
+      // Find and remove
+      const getAllReq = store.getAll();
+      getAllReq.onsuccess = () => {
+        const found = getAllReq.result.find(r => r.appId === appId);
+        if (found) {
+          store.delete(found.id);
+          tx.oncomplete = () => {
+            loadSavedMarks();
+            showToast(`${appTitle} dihapus dari bookmark`, 'star_border', 'secondary');
+          };
+        }
+      };
+    } else {
+      store.add({
+        type: 'app_bookmark',
+        appId: appId,
+        title: `${appEmoji} ${appTitle}`,
+        content: `Aplikasi resmi Google Play dari El-Salam Technology, Inc.`,
+        timestamp: new Date().toLocaleString()
+      });
+      tx.oncomplete = () => {
+        loadSavedMarks();
+        triggerSimulatedPush('Bookmark Berhasil', `${appTitle} disimpan di IndexedDB Vault`, 'star', 'tertiary');
+      };
+    }
+  }
+
+  function saveUserNote() {
+    const titleInput = document.getElementById('note-title-input');
+    const contentInput = document.getElementById('note-content-input');
+    if (!titleInput || !contentInput || !dbInstance) return;
+
+    const title = titleInput.value.trim();
+    const content = contentInput.value.trim();
+    if (!title || !content) return;
+
+    const tx = dbInstance.transaction(STORE_MARKS, 'readwrite');
+    const store = tx.objectStore(STORE_MARKS);
+    store.add({
+      type: 'recruiter_note',
+      title: title,
+      content: content,
+      timestamp: new Date().toLocaleString()
+    });
+
+    tx.oncomplete = () => {
+      titleInput.value = '';
+      contentInput.value = '';
+      loadSavedMarks();
+      triggerSimulatedPush('Catatan Tersimpan', `"${title}" disimpan ke database IndexedDB`, 'check_circle', 'accent-emerald');
+    };
+  }
+
+  function deleteRecord(id) {
+    if (!dbInstance) return;
+    const tx = dbInstance.transaction(STORE_MARKS, 'readwrite');
+    tx.objectStore(STORE_MARKS).delete(id);
+    tx.oncomplete = () => {
+      loadSavedMarks();
+      showToast('Data dihapus dari IndexedDB', 'delete', 'secondary');
+    };
+  }
+
+  function clearAllIndexedDBData() {
+    if (!dbInstance) return;
+    const tx = dbInstance.transaction(STORE_MARKS, 'readwrite');
+    tx.objectStore(STORE_MARKS).clear();
+    tx.oncomplete = () => {
+      loadSavedMarks();
+      showToast('Database IndexedDB telah dikosongkan', 'delete_sweep', 'error');
+    };
+  }
+
+  function exportIndexedDBNotes() {
+    if (!dbInstance) return;
+    const tx = dbInstance.transaction(STORE_MARKS, 'readonly');
+    const getAllReq = tx.objectStore(STORE_MARKS).getAll();
+    getAllReq.onsuccess = () => {
+      const blob = new Blob([JSON.stringify(getAllReq.result, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Andu_Vault_Export_${Date.now()}.json`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      showToast('Ekspor arsip JSON berhasil diunduh', 'download', 'accent-emerald');
+    };
+  }
+
+  // Toast & Push Simulators
+  function showToast(message, iconName = 'notifications', accentColor = 'primary') {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+
+    const toast = document.createElement('div');
+    toast.className = `pointer-events-auto flex items-center gap-3 px-4 py-3 rounded-2xl bg-surface-container-highest/95 backdrop-blur-xl shadow-2xl border border-outline-variant transform translate-x-12 opacity-0 transition-all duration-300 max-w-sm`;
+    toast.innerHTML = `
+      <div class="w-8 h-8 rounded-xl bg-${accentColor}/20 text-${accentColor} flex items-center justify-center shrink-0">
+        <span class="material-symbols-outlined text-[18px]">${iconName}</span>
+      </div>
+      <div class="flex flex-col pr-1">
+        <span class="font-label-code-sm text-label-code-sm font-bold text-on-surface">Notifikasi Sistem</span>
+        <span class="font-body-sm text-[12px] text-on-surface-variant leading-tight">${message}</span>
+      </div>
+      <button class="text-on-surface-variant hover:text-on-surface ml-auto shrink-0 cursor-pointer" onclick="this.parentElement.remove()">
+        <span class="material-symbols-outlined text-[16px]">close</span>
+      </button>
+    `;
+
+    container.appendChild(toast);
+    setTimeout(() => toast.classList.remove('translate-x-12', 'opacity-0'), 20);
+    setTimeout(() => {
+      toast.classList.add('translate-x-12', 'opacity-0');
+      setTimeout(() => toast.remove(), 400);
+    }, 4500);
+  }
+
+  function triggerSimulatedPush(title, message, icon, color) {
+    showToast(`${title}: ${message}`, icon, color);
+    if ('Notification' in window && Notification.permission === 'granted') {
+      try {
+        new Notification(title, { body: message, icon: 'https://lh3.googleusercontent.com/aida/AEtjO1WIPay2IVNN_ZJ5GCbmVt-ZvIO2Gncn_xVUKx1Zu3CpulhjgdMu1I8CtkF7Critlzs6KD3ovKcK-jzRbUeBQTdO1JkW_MINadGTHLvva69YvGtvjcmSM6ZymYJF2pFBi3L8dfchCi0UBF6T7jqIpAKXVL4hab5XAttb8gQXoVAkF8fY5QcH7RQzJHJ89VkZIBq3dMUXfUEA9aCIx9319kDilINrgwytc_mjZVWMkS5RkeBlyMTh3Jz6baY' });
+      } catch (err) {
+        console.warn('Native notification suppressed in frame', err);
+      }
+    }
+  }
+
+  function requestBrowserNotification() {
+    if ('Notification' in window) {
+      Notification.requestPermission().then(permission => {
+        const label = document.getElementById('notif-perm-label');
+        if (permission === 'granted') {
+          if (label) label.textContent = 'Izin Notifikasi Aktif';
+          triggerSimulatedPush('Notifikasi Aktif', 'Browser telah mengizinkan notifikasi real-time dari andu.my.id', 'verified', 'accent-emerald');
+        } else {
+          if (label) label.textContent = 'Izin Terbatas';
+          showToast('Izin notifikasi belum diberikan atau diblokir peramban', 'warning', 'tertiary');
+        }
+      });
+    } else {
+      showToast('Peramban ini tidak mendukung Web Notifications API', 'info', 'error');
+    }
+  }
+
+  // Pesaner Tabs & Gateway
+  let pesanerMode = 'login';
+  function switchPesanerTab(mode) {
+    pesanerMode = mode;
+    const tabLogin = document.getElementById('tab-pesaner-login');
+    const tabRegister = document.getElementById('tab-pesaner-register');
+    const nameField = document.getElementById('field-pesaner-name');
+    const btnLabel = document.getElementById('pesaner-btn-label');
+
+    if (mode === 'login') {
+      tabLogin.className = "flex-1 py-2 rounded-lg font-label-code-sm text-label-code-sm font-bold bg-surface-container-high text-on-surface transition-all shadow-sm";
+      tabRegister.className = "flex-1 py-2 rounded-lg font-label-code-sm text-label-code-sm text-on-surface-variant hover:text-on-surface transition-all";
+      nameField.style.display = 'none';
+      btnLabel.textContent = "Masuk ke Pesaner & Kirim Pesan";
+    } else {
+      tabRegister.className = "flex-1 py-2 rounded-lg font-label-code-sm text-label-code-sm font-bold bg-surface-container-high text-on-surface transition-all shadow-sm";
+      tabLogin.className = "flex-1 py-2 rounded-lg font-label-code-sm text-label-code-sm text-on-surface-variant hover:text-on-surface transition-all";
+      nameField.style.display = 'block';
+      btnLabel.textContent = "Daftar Akun Pesaner Baru";
+    }
+  }
+
+  function handlePesanerAuth() {
+    const email = document.getElementById('pesaner-email')?.value || '';
+    showToast(`Mengarahkan ${email} ke portal pesaner.andu.my.id...`, 'lock_open', 'secondary');
+    setTimeout(() => {
+      window.open('https://pesaner.andu.my.id/', '_blank');
+    }, 800);
+  }
+
+  // Init DOM
+  document.addEventListener('DOMContentLoaded', () => {
+    initThemePreference();
+    initIndexedDB();
+    renderApps('all');
+    startTypewriter();
+
+    document.getElementById('btn-quick-ping')?.addEventListener('click', () => {
+      triggerSimulatedPush("Halo dari Andu!", "Terima kasih telah mengunjungi portofolio resmi di andu.my.id", "waving_hand", "primary");
+    });
+  });
+</script></body></html>
